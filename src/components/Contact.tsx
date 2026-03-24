@@ -1,13 +1,17 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="contact" className="py-24 bg-[#030303]" aria-label="Contact section">
+    <section
+      id="contact"
+      className="py-24 bg-[#030303]"
+      aria-label="Contact section"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -19,9 +23,12 @@ export default function Contact() {
           <span className="text-[#FF7E00] text-xs font-mono tracking-widest uppercase">
             // Get in Touch
           </span>
-          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">Start a Project</h2>
+          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">
+            Start a Project
+          </h2>
           <p className="text-[#999] mt-3 max-w-xl">
-            Ready to engineer the unthinkable? Tell us about your vision and we'll respond within 24 hours.
+            Ready to engineer the unthinkable? Tell us about your vision and
+            we'll respond within 24 hours.
           </p>
         </motion.div>
 
@@ -33,21 +40,24 @@ export default function Contact() {
             className="lg:col-span-2 space-y-8"
           >
             <div>
-              <h3 className="text-[#F5F5F5] font-bold text-xl mb-2">Let's Build Together</h3>
+              <h3 className="text-[#F5F5F5] font-bold text-xl mb-2">
+                Let's Build Together
+              </h3>
               <p className="text-[#999] text-sm leading-relaxed">
-                Whether you're launching a new product, modernizing legacy infrastructure, or
-                exploring AI capabilities — we want to hear your story.
+                Whether you're launching a new product, modernizing legacy
+                infrastructure, or exploring AI capabilities — we want to hear
+                your story.
               </p>
             </div>
 
             <div className="space-y-4">
               {[
-                { icon: Mail, label: "hello@unlimitedinnovation.io" },
-                { icon: Phone, label: "+1 (800) 555-0199" },
-                { icon: MapPin, label: "San Francisco, CA · Global Remote" },
+                { icon: Mail, label: 'info@unlimitedinnovation.com' },
+                { icon: Phone, label: '+962 79 000 000' },
+                { icon: MapPin, label: 'Amman, Jordan' },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-3">
-                  <div className="w-9 h-9 border border-[rgba(255,126,0,0.3)] flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 border border-[rgba(255,126,0,0.3)] flex items-center justify-center shrink-0">
                     <Icon className="w-4 h-4 text-[#FF7E00]" />
                   </div>
                   <span className="text-[#999] text-sm">{label}</span>
@@ -56,9 +66,15 @@ export default function Contact() {
             </div>
 
             <div className="glass-card p-5 border-l-2 border-[#FF7E00]">
-              <div className="text-[#F5F5F5] font-semibold text-sm mb-1">Typical Response Time</div>
-              <div className="text-[#FF7E00] text-2xl font-bold font-mono">&lt; 24hrs</div>
-              <div className="text-[#999] text-xs mt-1">We don't keep ambitious teams waiting.</div>
+              <div className="text-[#F5F5F5] font-semibold text-sm mb-1">
+                Typical Response Time
+              </div>
+              <div className="text-[#FF7E00] text-2xl font-bold font-mono">
+                &lt; 24hrs
+              </div>
+              <div className="text-[#999] text-xs mt-1">
+                We don't keep ambitious teams waiting.
+              </div>
             </div>
           </motion.div>
 
@@ -70,7 +86,7 @@ export default function Contact() {
           >
             <form
               className="glass-card p-8 space-y-5"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={e => e.preventDefault()}
               aria-label="Contact form"
             >
               <div className="grid sm:grid-cols-2 gap-5">
@@ -129,7 +145,8 @@ export default function Contact() {
               </motion.button>
 
               <p className="text-[#999] text-xs text-center">
-                Your information is confidential and never shared with third parties.
+                Your information is confidential and never shared with third
+                parties.
               </p>
             </form>
           </motion.div>
