@@ -1,35 +1,35 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { Search, Layers, Code2, Rocket } from "lucide-react";
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Search, Layers, Code2, Rocket } from 'lucide-react';
 
 const steps = [
   {
-    number: "01",
+    number: '01',
     icon: Search,
-    title: "Discovery",
+    title: 'Discovery',
     description:
-      "Deep-dive into your business goals, technical constraints, and user needs. We audit your current stack and define measurable success criteria before a single line of code is written.",
+      'Deep-dive into your business goals, technical constraints, and user needs. We audit your current stack and define measurable success criteria before a single line of code is written.',
   },
   {
-    number: "02",
+    number: '02',
     icon: Layers,
-    title: "Design",
+    title: 'Design',
     description:
-      "Architecture blueprints, system design, and UX wireframes. We validate assumptions early with prototypes and stakeholder reviews to eliminate costly pivots later.",
+      'Architecture blueprints, system design, and UX wireframes. We validate assumptions early with prototypes and stakeholder reviews to eliminate costly pivots later.',
   },
   {
-    number: "03",
+    number: '03',
     icon: Code2,
-    title: "Develop",
+    title: 'Develop',
     description:
-      "Agile sprints with continuous integration, automated testing, and bi-weekly demos. You have full visibility and control throughout the entire build process.",
+      'Agile sprints with continuous integration, automated testing, and bi-weekly demos. You have full visibility and control throughout the entire build process.',
   },
   {
-    number: "04",
+    number: '04',
     icon: Rocket,
-    title: "Deploy",
+    title: 'Deploy',
     description:
-      "Zero-downtime deployments to production with monitoring, alerting, and performance tuning baked in from day one. We stay on until your team is confident and self-sufficient.",
+      'Zero-downtime deployments to production with monitoring, alerting, and performance tuning baked in from day one. We stay on until your team is confident and self-sufficient.',
   },
 ];
 
@@ -47,23 +47,29 @@ export default function Process() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <span className="text-[#FF7E00] text-xs font-mono tracking-widest uppercase">
-            // How We Work
+          <span className="text-[#FF7E00] text-xs tracking-widest uppercase">
+            How We Work
           </span>
-          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">Our Process</h2>
+          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">
+            Our Process
+          </h2>
           <p className="text-[#999] mt-3 max-w-xl">
-            A proven four-phase methodology that reduces risk, accelerates delivery, and ensures
-            what we build actually works in the real world.
+            A proven four-phase methodology that reduces risk, accelerates
+            delivery, and ensures what we build actually works in the real
+            world.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(255,126,0,0.3)] to-transparent" />
+          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-linear-to-r from-transparent via-[rgba(255,126,0,0.3)] to-transparent" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step, i) => {
               const stepRef = useRef(null);
-              const stepInView = useInView(stepRef, { once: true, margin: "-60px" });
+              const stepInView = useInView(stepRef, {
+                once: true,
+                margin: '-60px',
+              });
 
               return (
                 <motion.div
@@ -71,7 +77,11 @@ export default function Process() {
                   ref={stepRef}
                   initial={{ opacity: 0, y: 30 }}
                   animate={stepInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.12,
+                    ease: 'easeOut',
+                  }}
                   className="relative"
                 >
                   <div className="glass-card p-6">
@@ -83,8 +93,12 @@ export default function Process() {
                         {step.number}
                       </span>
                     </div>
-                    <h3 className="text-[#F5F5F5] font-bold text-lg mb-3">{step.title}</h3>
-                    <p className="text-[#999] text-sm leading-relaxed">{step.description}</p>
+                    <h3 className="text-[#F5F5F5] font-bold text-lg mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-[#999] text-sm leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
 
                   {i < steps.length - 1 && (

@@ -1,14 +1,42 @@
-import { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const metrics = [
-  { value: 99.9, suffix: "%", label: "Uptime SLA", description: "Enterprise-grade reliability" },
-  { value: 50, suffix: "+", label: "Projects Delivered", description: "Across 8 industries" },
-  { value: 15, suffix: "+", label: "Global Partners", description: "Strategic alliances" },
-  { value: 5, suffix: "M+", label: "Records Processed Daily", description: "Big data at scale" },
+  {
+    value: 99.9,
+    suffix: '%',
+    label: 'Uptime SLA',
+    description: 'Enterprise-grade reliability',
+  },
+  {
+    value: 50,
+    suffix: '+',
+    label: 'Projects Delivered',
+    description: 'Across 8 industries',
+  },
+  {
+    value: 15,
+    suffix: '+',
+    label: 'Global Partners',
+    description: 'Strategic alliances',
+  },
+  {
+    value: 5,
+    suffix: 'M+',
+    label: 'Records Processed Daily',
+    description: 'Big data at scale',
+  },
 ];
 
-function Counter({ target, suffix, duration = 2000 }: { target: number; suffix: string; duration?: number }) {
+function Counter({
+  target,
+  suffix,
+  duration = 2000,
+}: {
+  target: number;
+  suffix: string;
+  duration?: number;
+}) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -26,13 +54,12 @@ function Counter({ target, suffix, duration = 2000 }: { target: number; suffix: 
   }, [inView, target, duration]);
 
   const display =
-    target % 1 !== 0
-      ? count.toFixed(1)
-      : Math.floor(count).toString();
+    target % 1 !== 0 ? count.toFixed(1) : Math.floor(count).toString();
 
   return (
     <span ref={ref} className="tabular-nums">
-      {display}{suffix}
+      {display}
+      {suffix}
     </span>
   );
 }
@@ -51,10 +78,12 @@ export default function Metrics() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <span className="text-[#FF7E00] text-xs font-mono tracking-widest uppercase">
-            // By the Numbers
+          <span className="text-[#FF7E00] text-xs tracking-widest uppercase">
+            By the Numbers
           </span>
-          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">Proven at Scale</h2>
+          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">
+            Proven at Scale
+          </h2>
           <p className="text-[#999] mt-3">
             Real results from real projects — because numbers don't lie.
           </p>
@@ -63,7 +92,10 @@ export default function Metrics() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((metric, i) => {
             const cardRef = useRef(null);
-            const cardInView = useInView(cardRef, { once: true, margin: "-40px" });
+            const cardInView = useInView(cardRef, {
+              once: true,
+              margin: '-40px',
+            });
 
             return (
               <motion.div
@@ -77,7 +109,9 @@ export default function Metrics() {
                 <div className="text-4xl lg:text-5xl font-bold font-mono text-[#FF7E00] mb-2">
                   <Counter target={metric.value} suffix={metric.suffix} />
                 </div>
-                <div className="text-[#F5F5F5] font-semibold mb-1">{metric.label}</div>
+                <div className="text-[#F5F5F5] font-semibold mb-1">
+                  {metric.label}
+                </div>
                 <div className="text-[#999] text-xs">{metric.description}</div>
               </motion.div>
             );

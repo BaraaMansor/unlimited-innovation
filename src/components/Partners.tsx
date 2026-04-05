@@ -1,15 +1,15 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const partners = [
-  { name: "TechCorp Global", initials: "TC" },
-  { name: "DataSphere", initials: "DS" },
-  { name: "CloudAxis", initials: "CA" },
-  { name: "NexusAI", initials: "NA" },
-  { name: "InfraScale", initials: "IS" },
-  { name: "QuantumSoft", initials: "QS" },
-  { name: "VectorOps", initials: "VO" },
-  { name: "CipherNet", initials: "CN" },
+  { name: 'TechCorp Global', initials: 'TC' },
+  { name: 'DataSphere', initials: 'DS' },
+  { name: 'CloudAxis', initials: 'CA' },
+  { name: 'NexusAI', initials: 'NA' },
+  { name: 'InfraScale', initials: 'IS' },
+  { name: 'QuantumSoft', initials: 'QS' },
+  { name: 'VectorOps', initials: 'VO' },
+  { name: 'CipherNet', initials: 'CN' },
 ];
 
 export default function Partners() {
@@ -17,7 +17,11 @@ export default function Partners() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="partners" className="py-24 bg-[#030303]" aria-label="Partners section">
+    <section
+      id="partners"
+      className="py-24 bg-[#030303]"
+      aria-label="Partners section"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -26,12 +30,15 @@ export default function Partners() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <span className="text-[#FF7E00] text-xs font-mono tracking-widest uppercase">
-            // Trusted By
+          <span className="text-[#FF7E00] text-xs tracking-widest uppercase">
+            Trusted By
           </span>
-          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">Our Partners</h2>
+          <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">
+            Our Partners
+          </h2>
           <p className="text-[#999] mt-3 max-w-xl">
-            We work with industry leaders and innovative organizations across the globe.
+            We work with industry leaders and innovative organizations across
+            the globe.
           </p>
         </motion.div>
 
@@ -39,7 +46,10 @@ export default function Partners() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {partners.map((partner, i) => {
               const cardRef = useRef(null);
-              const cardInView = useInView(cardRef, { once: true, margin: "-40px" });
+              const cardInView = useInView(cardRef, {
+                once: true,
+                margin: '-40px',
+              });
 
               return (
                 <motion.div

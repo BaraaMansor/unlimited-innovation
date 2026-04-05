@@ -20,8 +20,8 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <span className="text-[#FF7E00] text-xs font-mono tracking-widest uppercase">
-            // Get in Touch
+          <span className="text-[#FF7E00] text-xs tracking-widest uppercase">
+            Get in Touch
           </span>
           <h2 className="text-4xl font-bold text-[#F5F5F5] mt-3">
             Start a Project
